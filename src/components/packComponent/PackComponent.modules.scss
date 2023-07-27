@@ -1,0 +1,68 @@
+.pack {
+  width: 249px;
+  height: 126px;
+  border-radius: 24px;
+  padding: 0px 12px 0px 12px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: -130px;
+  left: 80px;
+
+  &__small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $orange;
+    text-transform: uppercase;
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__medium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $orange;
+    text-transform: uppercase;
+    border-top: 1px solid $orange;
+    border-bottom: 1px solid $orange;
+    cursor: pointer;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $orange;
+    text-transform: uppercase;
+    z-index: 1;
+    cursor: pointer;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}

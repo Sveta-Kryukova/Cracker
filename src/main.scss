@@ -1,0 +1,13 @@
+@import 'utils/reset.scss';
+@import 'utils/normalize.scss';
+@import 'utils/variables.scss';
+
+@import './components/header/Header.modules.scss';
+@import './components/headerUpperBlock/HeaderUpperBlock.modules.scss';
+@import './components/navigation/Navigation.modules.scss';
+@import './components/mainBlock/MainBlock.modules.scss';
+@import './components/crackerConstructor/CrackerConstructor.modules.scss';
+@import './components/cart/Cart.modules.scss';
+@import './components/packComponent/PackComponent.modules.scss';
+@import './components/cartButton/CartButton.modules.scss';
+@import './components/footer/Footer.modules.scss';

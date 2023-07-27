@@ -1,0 +1,68 @@
+.header-upper-block {
+  width: 1920px;
+  height: 64px;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    margin-right: 578px;
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 24px;
+
+    &__cart-icon {
+      width: 13px;
+      height: 18px;
+      background-image: url("/images/icons/seed.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(15);
+      z-index: 1;
+    }
+
+    &__cart {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $white;
+    }
+
+    &__cart-button {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $white;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 5px;
+        background-image: url("/images/icons/arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-left: 11px;
+      }
+    }
+  }
+
+
+}

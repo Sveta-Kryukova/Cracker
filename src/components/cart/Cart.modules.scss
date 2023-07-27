@@ -1,0 +1,157 @@
+.cart {
+  width: 572px;
+  height: fit-content;
+  padding: 32px;
+  border-radius: 24px;
+  background-color: $white;
+  position: absolute;
+  left: 868px;
+  z-index: 1;
+
+  &__icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 48px;
+    gap: 24px;
+    margin-bottom: 12px;
+
+    &__icon--1 {
+      width: 32px;
+      height: 32px;
+      background-image: url('/images/icons/cart-1.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &__icon--2 {
+      width: 32px;
+      height: 32px;
+      background-image: url('/images/icons/cart-2.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &__icon--3 {
+      width: 32px;
+      height: 32px;
+      background-image: url('/images/icons/cart-3.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &__icon--4 {
+      width: 32px;
+      height: 32px;
+      background-image: url('/images/icons/cart-4.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  &__list {
+    margin-bottom: 24px;
+    
+    &__item {
+      display: flex;
+      gap: 30px;
+      margin-top: 32px;
+      align-items: center;
+      height: 52px;
+      border-bottom: 1px solid #c4c2c2;
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      background-image: url('/images/icons/cart-5.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(15);
+      margin-left: 5px;
+    }
+
+    &__component{
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      color: $orange;
+    }
+
+    &__weight {
+      width: 80px;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: end;
+      color: $black;
+    }
+    &__cost {
+      width: 80px;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: end;
+      color: $black;
+    }
+    &__delete-button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid #c4c2c2;
+      cursor: pointer;
+      color: $black;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      font-family: inherit;
+      font-style: bold;
+      transform: rotate(45deg);
+    }
+
+    }
+  }
+  &__total {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 16px;
+
+    &__text {
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: $black;
+      text-transform: uppercase;
+    }
+
+    &__button {
+      width: 130px;
+      height: 40px;
+      border-radius: 90px;
+      background-color: $orange;
+      border: none;
+      cursor: pointer;
+      color: $white;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
