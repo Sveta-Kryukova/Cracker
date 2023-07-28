@@ -29,7 +29,8 @@ export const Cart = () => {
         <div className="cart__icons__icon--3"></div>
         <div className="cart__icons__icon--4"></div>
       </div>
-      <div className="cart__list">
+      {!cartItems.length ? (<div className="cart__empty">Your cart is currently empty</div>) : (
+        <div className="cart__list">
         {cartItems.map((item, index) => (
           <div className="cart__list__item" key={index}>
             <div className="cart__list__item__icon"></div>
@@ -49,6 +50,7 @@ export const Cart = () => {
           </div>
         ))}
       </div>
+      )}
       <div className="cart__total">
         <span className="cart__total__text">Total: {calculateTotalPrice()}&#8364;</span>
         <button className="cart__total__button">checkout</button>

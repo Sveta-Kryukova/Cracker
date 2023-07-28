@@ -27,7 +27,7 @@ export const HeaderUpperBlock = () => {
 
   return (
     <div className="header-upper-block">
-      <img className="header-upper-block__logo" src="/images/logo.png" alt="logo" />
+      <image className="header-upper-block__logo"></image>
 
       <div className="header-upper-block__menu">
         {renderCartIcon()}
