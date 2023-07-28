@@ -1,6 +1,9 @@
-import { createSlice, PayloadAction, configureStore, Dispatch } from '@reduxjs/toolkit';
-import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { RootState } from './types'; 
+import { CartItem } from '../../types';
+
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState: RootState = {
   cartItems: [],
@@ -12,22 +15,17 @@ const initialState: RootState = {
   totalPrice: 0,
 };
 
-const cartSlice = createSlice({
+export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
     addToCart: (
       state: RootState,
-      action: PayloadAction<{
-        value1: string;
-        value2: string;
-        value3: string;
-        value4: string;
-        selectedPackSize: string;
-      }>
+      action: PayloadAction<CartItem>
     ) => {
-      const { value1, value2, value3, value4, selectedPackSize } = action.payload;
-      const newItem = {
+      const { id, value1, value2, value3, value4, selectedPackSize } = action.payload;
+      const newItem: CartItem = {
+        id: id || uuidv4(),
         value1,
         value2,
         value3,
@@ -42,25 +40,16 @@ const cartSlice = createSlice({
     
     deleteFromCart: (
       state: RootState,
-      action: PayloadAction<number>
+      action: PayloadAction<string>
     ) => {
-      const deletedItem = state.cartItems[action.payload];
+      const deletedItemId = action.payload;
+      state.cartItems = state.cartItems.filter(item => item.id !== deletedItemId);
+      const deletedItem = state.cartItems.find(item => item.id === deletedItemId);
       if (deletedItem) {
         state.totalPrice -= deletedItem.price ?? 0;
-        state.cartItems.splice(action.payload, 1);
       }
     },
   },
 });
 
 export const { addToCart, deleteFromCart } = cartSlice.actions;
-
-const store = configureStore({
-  reducer: cartSlice.reducer,
-});
-
-export default store;
-
-export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
-
-export const useAppDispatch = () => useDispatch<Dispatch>();

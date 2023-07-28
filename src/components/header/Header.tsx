@@ -3,7 +3,7 @@ import { Navigation } from '../navigation';
 import { Link } from 'react-scroll';
 
 export const Header = () => {
-  return (
+    return(
     <div className="header">
       <HeaderUpperBlock />
       <Navigation />
@@ -28,5 +28,5 @@ export const Header = () => {
         </Link>
       </div>
     </div>
-  );
+    );
 };

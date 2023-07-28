@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Cart } from '../cart';
 import { useTypedSelector } from '../../store';
+import classNames from 'classnames'; 
 
 export const HeaderUpperBlock = () => {
   const [showCart, setShowCart] = useState(false);
@@ -18,27 +19,26 @@ export const HeaderUpperBlock = () => {
           <span className="header-upper-block__menu__cart-icon__item-count">{cartItems.length}</span>
         </div>
       );
-    } else {
+    }
       return (
         <div className="header-upper-block__menu__cart-icon"></div>
       );
-    }
   };
 
   return (
     <div className="header-upper-block">
-      <image className="header-upper-block__logo"></image>
+      <image className="header-upper-block__logo" />
 
       <div className="header-upper-block__menu">
         {renderCartIcon()}
         <h3 className="header-upper-block__menu__cart">total: {totalPrice.toFixed(2)}&#8364;</h3>
         <button
-          className={`header-upper-block__menu__cart-button ${showCart ? 'rotate' : ''}`}
+          className={classNames('header-upper-block__menu__cart-button', { 'rotate': showCart })}
           onClick={handleShowCart}
         >
           details
         </button>
-        {showCart && <Cart />}
+        {showCart && <Cart onClose={handleShowCart}/>}
       </div>
     </div>
   );

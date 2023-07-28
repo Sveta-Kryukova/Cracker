@@ -16,5 +16,5 @@ export const MainBlock = () => {
 
       <CrackerConstructor />
     </div>
-  )
+  );
 }

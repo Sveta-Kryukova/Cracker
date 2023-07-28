@@ -21,21 +21,21 @@ export const Footer = () => {
         <h3 className="footer__share-block__title">share</h3>
         <div className="footer__share-block__content">
           <div className="footer__share-block__content__item">
-            <div className="footer__share-block__content__item__pinterest"></div>
+            <div className="footer__share-block__content__item__pinterest" />
             <p className="footer__share-block__content__item__text">pinterest.com</p>
             </div>
 
             <div className="footer__share-block__content__item">
-              <div className="footer__share-block__content__item__facebook"></div>
+              <div className="footer__share-block__content__item__facebook" />
               <p className="footer__share-block__content__item__text">facebook.com</p>
             </div>
 
             <div className="footer__share-block__content__item">
-              <div className="footer__share-block__content__item__instagram"></div>
+              <div className="footer__share-block__content__item__instagram" />
               <p className="footer__share-block__content__item__text">instagram.com</p>
             </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,16 +1,11 @@
-import { Footer } from './components/footer';
-import { Header } from './components/header/Header';
-import { MainBlock } from './components/mainBlock';
+import { Header, MainBlock, Footer } from './components';
 
-function App() {
-
+export const App = () => {
   return (
     <>
-    <Header />
-    <MainBlock />
-    <Footer />
+      <Header />
+      <MainBlock />
+      <Footer />
     </>
   )
 }
-
-export default App
