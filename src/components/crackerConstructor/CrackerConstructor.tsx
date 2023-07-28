@@ -107,7 +107,7 @@ export const CrackerConstructor = () => {
   
 
   return (
-    <div className="cracker-constructor">
+    <div id='cracker-constructor' className="cracker-constructor">
       <h2 className="cracker-constructor__title">cracker constructor</h2>
       <h3 className="cracker-constructor__subtitle">
       Current Value: {currentValue.toFixed(2)}&#8364;

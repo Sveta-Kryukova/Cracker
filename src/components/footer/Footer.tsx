@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="footer">
+    <div id='footer' className="footer">
       <div className="footer__phone-block">
         <h3 className="footer__phone-block__title">phone</h3>
         <a className="footer__phone-block__content" href="+38 (099) 999-99-99">+38 (099) 999-99-99</a>

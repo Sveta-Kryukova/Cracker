@@ -1,9 +1,8 @@
 .header {
-  width: 1920px;
   height: 880px;
   background-image: url("/images/header.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 
   &__container {
@@ -57,6 +56,9 @@
     }
 
     &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 156px;
       height: 56px;
       background-color: $orange;
@@ -67,12 +69,17 @@
       line-height: 28px;
       color: $white;
       text-transform: uppercase;
-      position: relative;
+      position: absolute;
+      top: 538px;
+      right: 480px;
       cursor: pointer;
       border: none;
       transition: all 0.3s ease-in-out;
 
-
+      &:hover {
+        background-color: $white;
+        color: $orange;
+      }
     }
   }
 
