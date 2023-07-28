@@ -25,6 +25,10 @@
     &:hover {
       color: $green;
     }
+
+    &.selected {
+      color: $green;
+    }
   }
 
   &__medium {
@@ -45,6 +49,9 @@
     &:hover {
       color: $green;
     }
+    &.selected {
+      color: $green;
+    }
   }
 
   &__large {
@@ -62,6 +69,9 @@
     cursor: pointer;
 
     &:hover {
+      color: $green;
+    }
+    &.selected {
       color: $green;
     }
   }

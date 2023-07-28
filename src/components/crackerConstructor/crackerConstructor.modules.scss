@@ -288,6 +288,23 @@
             left: 10px;
             top: 5px;
           }
+
+          &.rotate{
+            &::after {
+              content: '';
+              width: 15px;
+              height: 15px;
+              background-image: url('/images/icons/arrow-orange.png');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              display: inline-block;
+              position: relative;
+              left: 10px;
+              top: 0px;
+              transform: rotate(180deg);
+            }
+          }
         }
       }
       &__add-button {

@@ -6,6 +6,7 @@
   background-color: $white;
   position: absolute;
   left: 868px;
+  top: 60px;
   z-index: 1;
 
   &__icons {
@@ -52,15 +53,16 @@
     }
   }
   &__list {
+    margin-top: 32px;
     margin-bottom: 24px;
     
     &__item {
       display: flex;
       gap: 30px;
-      margin-top: 32px;
       align-items: center;
       height: 52px;
       border-bottom: 1px solid #c4c2c2;
+      align-items: center;
 
     &__icon {
       width: 20px;

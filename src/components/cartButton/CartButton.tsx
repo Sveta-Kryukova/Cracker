@@ -1,5 +1,9 @@
-export const CartButton = () => {
+type CartButtonProps = {
+  onClick: () => void;
+};
+
+export const CartButton:React.FC<CartButtonProps> = ({onClick}) => {
   return (
-      <button className="cart-button">add to cart +</button>
+      <button className="cart-button" onClick={onClick}>add to cart +</button>
   )
 }

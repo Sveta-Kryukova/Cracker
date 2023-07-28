@@ -1,4 +1,4 @@
-// import { Cart } from "../cart"
+
 import { HeaderUpperBlock } from "../headerUpperBlock"
 import { Navigation } from "../navigation"
 
@@ -6,7 +6,6 @@ export const Header = () => {
   return (
     <div className="header">
       <HeaderUpperBlock />
-      {/* <Cart /> */}
       <Navigation />
       <div className="header__container">
         <div className="header__container__left-block">
