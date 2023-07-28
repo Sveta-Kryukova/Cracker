@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTypedSelector, useAppDispatch } from '../../store';
 import { deleteFromCart } from '../../store';
 
