@@ -26,47 +26,44 @@ export const CrackerConstructor = () => {
     setCurrentValue(totalPrice + packagePrice);
   }, [totalPrice, selectedPackageInfo]);
 
-  const updateInputValues = (value1: number, value2: number, value3: number) => {
-    const sum = value1 + value2 + value3;
+  const updateInputValues = (newValue1: number, newValue2: number, newValue3: number) => {
+    const sum = newValue1 + newValue2 + newValue3;
     if (sum < 100) {
       const remainingPercentage = 100 - sum;
       setValue4(remainingPercentage);
+    } else {
+      setValue4(0);
     }
   };
-
-  const isTotalPercentage100 = () => {
-    return value1 + value2 + value3 + value4 === 100;
-  };
-
+  
   const handleFirstValueChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(event.target.value);
     if (newValue >= 0 && newValue <= 100) {
-      const remainingPercentage = 100 - newValue;
-      const percentageForEach = +(remainingPercentage / 3).toFixed();
       setValue1(newValue);
-      setValue2(percentageForEach);
-      setValue3(percentageForEach);
-      setValue4(percentageForEach);
+      updateInputValues(newValue, value2, value3);
     }
   };
-
+  
   const handleSecondValueChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(event.target.value);
     if (newValue >= 0 && newValue <= 100 - value1) {
-      const remainingPercentage = 100 - +(value1 + newValue).toFixed();
-      const percentageForEach = +(remainingPercentage / 2).toFixed();
       setValue2(newValue);
-      setValue3(percentageForEach);
-      setValue4(percentageForEach);
+      updateInputValues(value1, newValue, value3);
     }
   };
-
+  
   const handleThirdValueChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(event.target.value);
     if (newValue >= 0 && newValue <= 100 - value1 - value2) {
-      const remainingPercentage = (100 - +(value1 + value2 + newValue).toFixed());
       setValue3(newValue);
-      setValue4(remainingPercentage);
+      updateInputValues(value1, value2, newValue);
+    }
+  };
+  
+  const handleFourthValueChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(event.target.value);
+    if (newValue >= 0 && newValue <= 100 - value1 - value2 - value3) {
+      setValue4(newValue);
     }
   };
 
@@ -87,7 +84,7 @@ export const CrackerConstructor = () => {
   };
   
   const handleAddToCart = () => {
-    if (isTotalPercentage100() && selectedPackSize !== "") {
+    if (value1+value2+value3+value4===100 && selectedPackSize !== "") {
       const newItem: CartItem = {
         id: uuidv4(),
         value1: value1.toString(),
@@ -165,14 +162,20 @@ export const CrackerConstructor = () => {
           <div className="cracker-constructor__content__block-4__icon-4" />
           <input
             type="range"
-            min="0"
-            max={(!value1 || !value2 || !value3 ) ? 0 : 100 - value1 - value2 - value3}
+            min='0'
+            max={
+              (!value1 && !value2 && !value3)
+                ? 100
+                : (!value1 || !value2 || !value3)
+                ? 0
+                : 100 - value1 - value2 - value3
+            }
             value={value4}
             className="cracker-constructor__content__block-4__input-4"
-            readOnly
+            onChange={handleFourthValueChange}
           />
           <p className="cracker-constructor__content__block-4__value">
-            {(!value1 || !value2 || !value3 ) ? 0 : 100 - value1 - value2 - value3} %
+          {value4} %
           </p>
         </div>
         <div className="cracker-constructor__content__block-5">
@@ -185,7 +188,7 @@ export const CrackerConstructor = () => {
               choose your pack
             </button>
           </div>
-          {value1+value2+value3 !== 0 && selectedPackSize !== "" ?  (
+          {selectedPackSize !== "" ? (
             <CartButton onClick={handleAddToCart}/>
           ) : (
             <button
